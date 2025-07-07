@@ -1,0 +1,121 @@
+body {
+  background: #f8f8f8;
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.product-list-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+  color: #222;
+}
+
+.product-carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  /* Aşağıdaki satırı ekle! */
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  width: 260px;
+  min-width: 260px;
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+.product-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0.2rem 0;
+  color: #222;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.color-picker {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+  justify-content: center;
+}
+
+.color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: border 0.2s;
+  display: inline-block;
+}
+
+.color-dot.selected {
+  border: 2px solid #222;
+}
+
+.color-dot.yellow { background: #EEC6A9; }
+.color-dot.white  { background: #D9D9D9; }
+.color-dot.rose   { background: #E1AAA9; }
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.star-rating .star {
+  color: #FFD700;
+  font-size: 1.1rem;
+}
+
+.star-rating .star.inactive {
+  color: #e0e0e0;
+}
+
+@media (max-width: 900px) {
+  .product-carousel {
+    gap: 1rem;
+  }
+  .product-card {
+    width: 180px;
+    min-width: 180px;
+    padding: 1rem 0.5rem;
+  }
+  .product-image {
+    width: 80px;
+    height: 80px;
+  }
+}
